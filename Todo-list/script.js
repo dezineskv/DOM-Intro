@@ -16,12 +16,15 @@ document.addEventListener("DOMContentLoaded", function () {
         //adding the values in the list
         const taskItem = document.createElement("li") //this is nothing but a li tag created with JS
 
+        if (taskText !== "") {
+
         //we are giving the inner html value
         taskItem.innerHTML = `${taskText} <button id="delete-btn" class="delete">Delete</button>`
 
         //appending or adding child inside the parent
         // we are adding a new li inside the ul
-        taskList.appendChild(taskItem)
+        taskList.appendChild(taskItem);
+
 
         //remove functionality starts
         const deleteButton = taskItem.querySelector("#delete-btn")
@@ -29,6 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
             taskList.removeChild(taskItem)
         })
         //remove functionality ends
-
-    })
+        
+    }
+    else {
+        alert("Please type your task");
+    }   
+    // clear the input value after it has posted 
+    taskInput.value = "";
+}         
+)
 })
