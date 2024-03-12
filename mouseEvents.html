@@ -11,10 +11,11 @@
 
     <h1 id="text">This text will be changed based on the mouseover</h1>
 
+    <input id="text-input" type="text" placeholder="Type here">
     <script>
 
         const text = document.getElementById("text")
-
+// text targets the h1. mouseover & mouseout events change the style of the h1 color via event listeners.
         text.addEventListener("mouseover", function () {
             text.style.color = 'green'
         })
@@ -22,6 +23,13 @@
         text.addEventListener("mouseout", function () {
             text.style.color = 'black'
         })
+
+        const input = document.getElementById("input")
+// using 'event' parameter and use event.key for inputs
+        input.addEventListener("keypress", function () {
+        console.log("key pressed", event.key);
+        })
+
 
     </script>
 
